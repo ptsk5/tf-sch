@@ -57,7 +57,7 @@ resource "helm_release" "node-red" {
   
   set {
     name  = "ingress.main.hosts[0].host"
-    value = "{${var.basename}-node-red.${ibm_container_vpc_cluster.k8s-cluster.ingress_hostname}}"
+    value = "${var.basename}-node-red.${ibm_container_vpc_cluster.k8s-cluster.ingress_hostname}"
   }
 }
 
