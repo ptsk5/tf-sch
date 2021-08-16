@@ -45,7 +45,7 @@ provider "helm" {
 resource "helm_release" "node-red" {
   name       = "${var.basename}-node-red"
 
-  repository = "https://kubernetes-charts.storage.googleapis.com"
+  repository = "https://k8s-at-home.com/charts"
   chart      = "node-red"
   # version    = ""
   namespace = "${kubernetes_namespace.dev-ns.metadata.0.name}"
