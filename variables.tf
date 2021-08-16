@@ -4,10 +4,7 @@ variable "ibmcloud_api_key" {
 
 variable "basename" {
   description = "Prefix for all resources"
-}
-
-variable "ssh_key_name" {
-  description = "Name of the existing SSH key uploaded into VPC"
+  default = "simple-example"
 }
 
 variable "region" {

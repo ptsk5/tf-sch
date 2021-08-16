@@ -13,9 +13,6 @@ resource "ibm_container_vpc_cluster" "k8s-cluster" {
 data "ibm_container_cluster_config" "mycluster" {
   cluster_name_id = "${var.basename}-k8s-cluster"
   admin           = true
-  # TODO: This must be included if the cluster is not exist, 
-  #    but in case the cluster already exists there is the problem with this dependency which blocks refresh of actual state, so for that case, the block should be commented out
-  #    Probably the load_config_file=true option on the provider should be able to deal with this, needs to be tested!
   depends_on = [
       ibm_container_vpc_cluster.k8s-cluster
     ]
