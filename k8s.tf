@@ -51,12 +51,12 @@ resource "helm_release" "node-red" {
   namespace = "${kubernetes_namespace.dev-ns.metadata.0.name}"
   
   set {
-    name  = "ingress.enabled"
+    name  = "ingress.main.enabled"
     value = "true"
   }
   
   set {
-    name  = "ingress.hosts"
+    name  = "ingress.main.hosts[0].host"
     value = "{${var.basename}-node-red.${ibm_container_vpc_cluster.k8s-cluster.ingress_hostname}}"
   }
 }
