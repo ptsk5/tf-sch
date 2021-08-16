@@ -9,6 +9,6 @@
 ## Variables to be configured
 
 - see in `variables.tf` file
-  - the deployment targets Frankfurt DC and the first availability zone unless otherwise stated by using `region` and `zone` variable
+  - the deployment targets Frankfurt DC and the first availability zone unless otherwise stated by using `region` and `zone` variables
   - `ibmcloud_api_key` - mandatory variable to control IBM resources
   - `basename` - (optional) usefull prefix which is used for all created resources
