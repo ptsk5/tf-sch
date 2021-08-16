@@ -59,6 +59,21 @@ resource "helm_release" "node-red" {
     name  = "ingress.main.hosts[0].host"
     value = "${var.basename}-node-red.${ibm_container_vpc_cluster.k8s-cluster.ingress_hostname}"
   }
+
+  set {
+    name  = "ingress.main.hosts[0].paths[0].path"
+    value = "/"
+  }
+
+  set {
+    name  = "ingress.main.hosts[0].paths[0].service.name"
+    value = "${var.basename}-node-red"
+  }
+
+  set {
+    name  = "ingress.main.hosts[0].paths[0].service.port"
+    value = "1880"
+  }
 }
 
 output node_red_appingress {
